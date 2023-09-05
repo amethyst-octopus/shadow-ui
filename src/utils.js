@@ -21,6 +21,7 @@ function hexToRGB(hex) {
   return { r, g, b };
 }
 
+/** TBD if this will be needed */
 function hexToHSL(hex) {
 
 }
@@ -38,8 +39,13 @@ function rgbToHex(rgb) {
   return hex;
 }
 
+
+/** takes a hex color and returns light and dark shadow hex colors
+ *
+ * "#000000" => {lightShadow: "#000000", darkShadow:"#000000"}
+ */
 function colorToShadows(hex) {
-  let rbg = hexToRGB(hex);
+  let rgb = hexToRGB(hex);
 
   let lightShadow = {};
 
@@ -61,4 +67,23 @@ function colorToShadows(hex) {
 
 
   return { lightShadow, darkShadow };
+}
+
+/** looks at the window to determine background - color */
+function getBackgroundColor(){
+  const bodyColor = window.getComputedStyle(document.body, null).getPropertyValue("background-color");
+  const rootColor = window.getComputedStyle(document.body.parentElement, null).getPropertyValue("background-color");
+  return bodyColor ? bodyColor : rootColor
+}
+
+/** takes rgb string and concerts to rgb obj */
+function stringToRGB(str){
+  str = str.replace(/[^0-9,]/g, "").split(",")
+
+  let rgb = {}
+  rgb.r = parseInt(str[0])
+  rgb.g = parseInt(str[1])
+  rgb.b = parseInt(str[2])
+
+  return rgb
 }
