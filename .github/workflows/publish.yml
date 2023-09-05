@@ -1,3 +1,5 @@
+# Based on this blog https://forcepushed.com/blog/automating-npm-publishing-with-github-actions/
+
 name: NPM Publish
 on:
   workflow_dispatch:
