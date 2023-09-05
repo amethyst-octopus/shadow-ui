@@ -1,6 +1,6 @@
 {
   "name": "shadow-ui",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A neumorphic component design system",
   "main": "index.js",
   "scripts": {
