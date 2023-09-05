@@ -1,29 +1,59 @@
-# NPM Publish is the name for this action
 name: NPM Publish
-
-# This action will trigger on every release get created
 on:
-  release:
-    types: [created]
+  workflow_dispatch:
+    inputs:
+      release-type:
+        description: 'Release type (one of): patch, minor, major, prepatch, preminor, premajor, prerelease'
+        required: true
 
-# Job will run on a ubuntu instance
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the code
-      - uses: actions/checkout@v2
-      # Setup node with version 18.x and NPM registry url
+
+      # Action setup
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "18.x"
-          registry-url: "https://registry.npmjs.org"
-      # Run npm install to install project packages
-      - run: npm install
-      # npm build to build the project
-      - run: npm run build
-      # publish the files to NPM
-      - run: npm publish --access public
-      # for publishing, npm need authorization. We add the NPM token to the environment which will take care of authorization to publish to the package
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      # Configure Git Actions author
+      # @link https://github.com/orgs/community/discussions/26560
+      - name: Git configuration
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+
+      # Bump package version
+      - name: Bump release version
+        if: startsWith(github.event.inputs.release-type, 'pre') != true
+        run: |
+          echo "NEW_VERSION=$(npm --no-git-tag-version version $RELEASE_TYPE)" >> $GITHUB_ENV
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          RELEASE_TYPE: ${{ github.event.inputs.release-type }}
+
+      # Commit new package version
+      - name: Commit package.json version change
+        run: |
+          git add "package.json"
+          git commit -m "mark release ${{ env.NEW_VERSION }}"
+
+      # Run packages install
+      - run: npm ci
+
+      # Tests
+      - run: npm run test
+
+      # Publish to npm
+      - run: npm run build
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Push repository changes
+      - name: Push changes to repository
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push origin
