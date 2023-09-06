@@ -72,29 +72,30 @@ export function colorToShadows(hex) {
 /** looks at the window to determine background - color
  * returns a string "rbg(123, 123, 123)"
  */
-function getBackgroundColor(){
+function getBackgroundColor() {
   const bodyColor = window.getComputedStyle(document.body, null).getPropertyValue("background-color");
   const rootColor = window.getComputedStyle(document.body.parentElement, null).getPropertyValue("background-color");
-  return bodyColor ? bodyColor : rootColor
+  if (bodyColor === "rgba(0, 0, 0, 0)" || !bodyColor) return rootColor;
+  return bodyColor;
 }
 
 /** takes rgb string and concerts to rgb obj */
-function stringToRGB(str){
-  str = str.replace(/[^0-9,]/g, "").split(",")
+function stringToRGB(str) {
+  str = str.replace(/[^0-9,]/g, "").split(",");
 
-  let rgb = {}
-  rgb.r = parseInt(str[0])
-  rgb.g = parseInt(str[1])
-  rgb.b = parseInt(str[2])
+  let rgb = {};
+  rgb.r = parseInt(str[0]);
+  rgb.g = parseInt(str[1]);
+  rgb.b = parseInt(str[2]);
 
-  return rgb
+  return rgb;
 }
 
 /** combines functions to return useable color code
  * designed to be used when setting initial state for a component
  */
-export function startingHexColor(){
-  let color = getBackgroundColor()
-  let colorRGB = stringToRGB(color)
-  return rgbToHex(colorRGB)
+export function startingHexColor() {
+  let color = getBackgroundColor();
+  let colorRGB = stringToRGB(color);
+  return rgbToHex(colorRGB);
 }
