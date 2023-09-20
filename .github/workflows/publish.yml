@@ -3,7 +3,7 @@
 name: NPM Publish
 on:
   release:
-    types: [created, published]
+    types: [created]
 
 permissions:
   contents: write
@@ -14,6 +14,8 @@ jobs:
     steps:
       # Action setup
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
@@ -57,4 +59,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git push origin
+          git push
