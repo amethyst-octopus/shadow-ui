@@ -1,20 +1,18 @@
 import { SButton } from "./SButton"
 
 export default {
-    component: SButton,
-    title: 'Components/SButton'
+	component: SButton,
+	title: 'Components/SButton'
 }
 
-export const Primary = {
-    args: {
-        text: 'Label',
-        kind: 'primary'
-    }
-}
-
-export const Secondary = {
-    args: {
-        text: 'Label',
-        kind: 'secondary'
-    }
+export const Default = {
+	argTypes: {
+		kind: {
+			options: ['primary', 'secondary'],
+			control: { type: 'radio' },
+		}
+	},
+	args: {
+		text: 'Label',
+	},
 }
