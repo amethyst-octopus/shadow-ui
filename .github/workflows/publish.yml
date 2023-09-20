@@ -2,11 +2,11 @@
 
 name: NPM Publish
 on:
-  workflow_dispatch:
-    inputs:
-      release-type:
-        description: "Release type (one of): patch, minor, major, prepatch, preminor, premajor, prerelease"
-        required: true
+  release:
+    types: [created, published]
+
+permissions:
+  contents: write
 
 jobs:
   setup:
@@ -16,8 +16,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "18.x"
-          registry-url: "https://registry.npmjs.org"
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
 
       # Configure Git Actions author
       # @link https://github.com/orgs/community/discussions/26560
@@ -28,17 +28,16 @@ jobs:
 
       # Bump package version
       - name: Bump release version
-        if: startsWith(github.event.inputs.release-type, 'pre') != true
         run: |
           echo "NEW_VERSION=$(npm --no-git-tag-version version $RELEASE_TYPE)" >> $GITHUB_ENV
         env:
-          RELEASE_TYPE: ${{ github.event.inputs.release-type }}
+          RELEASE_TYPE: ${{ github.event.release.tag_name }}
 
       # Commit new package version
       - name: Commit package.json version change
         run: |
           git add "package.json"
-          git commit -m "mark release ${{ env.NEW_VERSION }}"
+          git commit -m "mark release ${{ github.event.release.tag_name }}"
 
       # Run packages install
       - run: npm ci
