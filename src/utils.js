@@ -21,11 +21,6 @@ function hexToRGB(hex) {
   return { r, g, b };
 }
 
-/** TBD if this will be needed */
-function hexToHSL(hex) {
-
-}
-
 /**takes an rgb color code and converts to hex color
  *  {r:000, g:000, b:000} => "#000000"
  */
