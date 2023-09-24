@@ -1,17 +1,21 @@
-import { Switch } from "./Switch"
+import { T1Switch } from "./Switch"
 
 export default {
-  component: Switch,
-  title: 'Components/Switch'
+  component: T1Switch,
+  title: 'Components/Switches'
 }
 
-export const Default = {
+export const Type_One = {
   argTypes: {
     checked: {
       control: 'boolean',
     },
-    disabled: {
-      control: 'boolean',
-    }
-  }
+    // disabled: {
+    //   control: 'boolean',
+    // }
+  },
+  args: {
+		checked: false,
+		// disabled: false
+	},
 }
