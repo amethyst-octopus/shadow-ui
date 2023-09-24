@@ -8,7 +8,7 @@
     "build": "vite build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "start": "npm run build-storybook && npx http-server ./storybook-static"
+    "start": "npm run build-storybook && npx http-server ./storybook-static",
     "dev": "npm run storybook"
   },
   "author": "",
