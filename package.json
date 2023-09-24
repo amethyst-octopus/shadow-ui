@@ -30,5 +30,8 @@
   },
   "peerDependencies": {
     "react": "^18.2.0"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
