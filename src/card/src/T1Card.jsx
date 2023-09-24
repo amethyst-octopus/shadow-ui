@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { startingHexColor, colorToShadows } from "../../utils";
 
-export default function Card({ bgColor = startingHexColor(), media, text }) {
+export const T1Card = ({ bgColor = startingHexColor(), media, text }) => {
     const [backgroundColor, setBackgroundColor] = useState(bgColor);
     const [shadows, setShadows] = useState({});
 
     useEffect(() => {
         setShadows(colorToShadows(backgroundColor));
     }, [backgroundColor]);
-
 
     let style = {
         margin: "2rem",

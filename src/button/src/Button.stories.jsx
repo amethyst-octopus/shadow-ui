@@ -1,11 +1,11 @@
-import { SButton } from "./SButton"
+import { T1Button } from "./T1Button"
 
 export default {
-	component: SButton,
-	title: 'Components/SButton'
+	title: 'Components/Buttons',
+	component: T1Button
 }
 
-export const Default = {
+export const Type_One = {
 	argTypes: {
 		kind: {
 			options: ['primary', 'secondary'],
@@ -14,5 +14,6 @@ export const Default = {
 	},
 	args: {
 		text: 'Label',
+		kind: 'primary'
 	},
 }
