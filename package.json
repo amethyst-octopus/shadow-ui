@@ -1,6 +1,6 @@
 {
   "name": "@amethyst-octopus/shadow-ui",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "A neumorphic component design system",
   "main": "index.js",
   "scripts": {
