@@ -1,16 +1,21 @@
-[data-button] {
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-weight: bold;
-  border: 1px solid #000000;
+.button {
+  border: none;
+  padding: 15px 50px;
+  transition: .2s ease-in-out;
+  border-radius: 15px;
+  background: #efefef;
+  box-shadow: 10px 10px 20px #bebebe,
+    -10px -10px 20px #ffffff;
 }
 
-[data-button~="kind:primary"] {
-  background-color: #000000;
-  color: #ffffff;
+.button:hover {
+  box-shadow: 5px 5px 10px #bebebe,
+    -5px -5px 10px #ffffff;
 }
 
-[data-button~="kind:secondary"] {
-  background-color: #ffffff;
-  color: #000000;
+.button:active {
+  border-radius: 15px;
+  background: #efefef;
+  box-shadow: inset 4px 4px 8px #bebebe,
+    inset -4px -4px 8px #ffffff;
 }
