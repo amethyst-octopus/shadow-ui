@@ -1,7 +1,7 @@
-import './Button.css'
+import './Button.css';
 
 export const T1Button = (props) => (
-  <button data-button={`kind:${props.kind}`} {...props}>
+  <button className="button" {...props}>
     {props.text}
   </button>
-)
+);
