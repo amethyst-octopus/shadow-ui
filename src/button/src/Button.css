@@ -21,22 +21,22 @@
     inset -4px -4px 8px #ffffff;
 }
 
-.primary {
+.button.primary {
   color: black
 }
 
-.secondary {
+.button.secondary {
   color: blue;
 }
 
-.danger {
+.button.danger {
   color: red;
 }
 
-.success {
+.button.success {
   color: green;
 }
 
-.info {
+.button.info {
   color: steelblue;
 }
