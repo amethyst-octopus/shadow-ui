@@ -8,7 +8,7 @@ export default {
 export const Type_One = {
 	argTypes: {
 		kind: {
-			options: ['primary', 'secondary'],
+			options: ['primary', 'secondary', 'danger', 'success', 'info'],
 			control: { type: 'radio' },
 		}
 	},
