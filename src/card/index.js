@@ -1,1 +1,1 @@
-export * from "./src/SCard"
+export * from "./src/T1Card"
