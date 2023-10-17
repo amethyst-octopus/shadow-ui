@@ -26,7 +26,7 @@
   background: #ecf0f3;
   border-radius: 15px;
   transform: translate3d(-75%, 0, 0);
-  transition: transform 0.5s linear;
+  transition: transform 0.1s linear;
   box-shadow:
     -8px -4px 8px 0px #ffffff,
     8px 4px 12px 0px #d1d9e6;

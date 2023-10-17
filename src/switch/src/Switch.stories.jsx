@@ -10,12 +10,8 @@ export const Type_One = {
     checked: {
       control: 'boolean',
     },
-    // disabled: {
-    //   control: 'boolean',
-    // }
   },
   args: {
 		checked: false,
-		// disabled: false
 	},
 }
