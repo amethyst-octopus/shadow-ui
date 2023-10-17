@@ -34,23 +34,3 @@
   box-shadow: inset var(--elevation-xs) var(--elevation-xs) var(--elevation-s) #bebebe,
     inset var(--depression-xs) var(--depression-xs) var(---elevation-s) #ffffff;
 }
-
-.button.primary {
-  color: black
-}
-
-.button.secondary {
-  color: blue;
-}
-
-.button.danger {
-  color: red;
-}
-
-.button.success {
-  color: green;
-}
-
-.button.info {
-  color: steelblue;
-}
