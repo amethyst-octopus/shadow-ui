@@ -5,7 +5,9 @@ module.exports = {
 	},
 	"extends": [
 		"eslint:recommended",
-		"plugin:react/jsx-runtime"
+		// jsx-runtime allows us to not have to import React at the top of each jsx file
+		// https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md#when-not-to-use-it
+		"plugin:react/jsx-runtime" 
 	],
 	"overrides": [
 		{
