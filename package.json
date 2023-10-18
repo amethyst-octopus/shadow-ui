@@ -42,10 +42,10 @@
     "node": "18.x"
   },
   "lint-staged": {
-    "src/**/*.{html,js,css}": [
+    "src/**/*.{html,js,jsx,css}": [
       "prettier --write"
     ],
-    "src/**/*.js": [
+    "src/**/*.{js,jsx}": [
       "eslint --fix"
     ]
   },
