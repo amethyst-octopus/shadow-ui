@@ -1,27 +1,26 @@
-import { useState } from 'react';
-import './Button.css';
+import { useState } from "react";
+import "./Button.css";
 
-export const T1Button = ({text, onPress, style, additionalDirectives}) => {
+export const T1Button = ({ text, onPress, style, additionalDirectives }) => {
+	const [isFocused, setFocus] = useState(false);
 
-  const [isFocused, setFocus] = useState(false);
+	const handleClick = () => {
+		setFocus(true);
+		if (onPress) onPress();
+	};
 
-  const handleClick = (e) => {
-    setFocus(true);
-    if (onPress)
-      onPress();
-  }
-
-  return (
-    <button
-      onMouseLeave={() => setFocus(false)}
-      onFocus={() => setFocus(true)}
-      onBlur={() => setFocus(false)}
-      onClick={handleClick}
-      tabIndex={0} 
-      className={isFocused ? 'button button-focus' : 'button'}
-      style={style}
-      {...additionalDirectives}>
-      {text}
-    </button>
-  );
+	return (
+		<button
+			onMouseLeave={() => setFocus(false)}
+			onFocus={() => setFocus(true)}
+			onBlur={() => setFocus(false)}
+			onClick={handleClick}
+			tabIndex={0}
+			className={isFocused ? "button button-focus" : "button"}
+			style={style}
+			{...additionalDirectives}
+		>
+			{text}
+		</button>
+	);
 };
