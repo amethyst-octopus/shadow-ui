@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Switch.css'
 
 
@@ -12,6 +12,10 @@ export const T1Switch = ({
 
     const [isChecked,  setChecked] = useState(Boolean(checked))
 
+    useEffect(() => {
+      setChecked(checked);
+    }, [checked])
+
 
     const _handleOnClick = () => {
       setChecked(!isChecked);
@@ -22,7 +26,7 @@ export const T1Switch = ({
 
     return (
       <div className="switch" {...containerProps} onClick={_handleOnClick}>
-        <input className="switch-state" type="checkbox" {...inputProps} />
+        <input className="switch-state" type="checkbox" {...inputProps} checked={isChecked}/>
         <div className="indicator" {...indicatorProps}></div>
       </div>
     )

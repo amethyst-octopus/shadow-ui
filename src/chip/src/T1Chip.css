@@ -1,0 +1,32 @@
+.t1-chip {
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-align: center;
+    user-select: none;
+    font-size: 12px;
+    font-family: monospace;
+    transition: .2s box-shadow ease-in-out;
+    border-radius: 15px;
+    background: #efefef;
+    box-shadow: 3px 3px 6px #b8b9be,
+    -3px -3px 6px #ffffff;
+    border: none;
+}
+
+.t1-chip:hover {
+    cursor: pointer;
+}
+
+.t1-chip:hover:not(.selected) {
+    box-shadow: 1px 1px 2px hsl(264, 4%, 77%),
+      -1px -1px 2px #ffffff;
+}
+
+.selected {
+    box-shadow: 
+        2px 1px 6px hsl(0, 0%, 65%),
+        -3px -3px 6px #ffffff,
+        inset 1px 1px 1px hsl(0, 0%, 60%),
+        inset -4px -4px 8px #ffffff;
+}

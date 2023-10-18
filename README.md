@@ -8,3 +8,4 @@ A neumorphic component design system
 ## Special Thanks
 
 - Christophe de Canteloube for inspiration via Codepen neumorphism examples
+- Jack Domieo - Neumorphic design examples via [Codepen](https://codepen.io/jackdomleo7/pen/mdeowoz)
