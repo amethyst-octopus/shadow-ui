@@ -1,42 +1,36 @@
+@import url('../../global/styles.css');
+
 .button {
   border: none;
+  font-family: monospace;
   padding: 15px 20px;
   transition: .2s box-shadow ease-in-out;
-  border-radius: 15px;
+  border-radius: 10px;
   background: #efefef;
-  box-shadow: 3px 3px 6px #b8b9be,
-  -3px -3px 6px #ffffff;
+  filter: blur(10);
+  outline: none;
+  transition: 0.3s all ease;
+  cursor: pointer;
+  height: fit-content;
+  box-shadow:
+    var(--depression-s) var(--depression-xs) var(--elevation-s) 0px #ffffff,
+    8px var(--elevation-xs) var(--elevation-m) 0px #b8b9be,
+    var(--elevation-xs) var(--elevation-xs) var(--elevation-xs) 0px #b8b9be inset,
+    var(--depression-xs) var(--depression-xs) var(--elevation-xs) 0px hsl(0, 0%, 100%) inset;
 }
 
 
 .button:hover {
-  box-shadow: 1px 1px 2px #bebebe,
-    -1px -1px 2px #ffffff;
+  cursor: pointer;
+}
+
+.button-focus {
+  transition: none;
+  border: 0.5px dashed black;
 }
 
 .button:active {
-  border-radius: 15px;
   background: #efefef;
-  box-shadow: inset 4px 4px 8px #bebebe,
-    inset -4px -4px 8px #ffffff;
-}
-
-.button.primary {
-  color: black
-}
-
-.button.secondary {
-  color: blue;
-}
-
-.button.danger {
-  color: red;
-}
-
-.button.success {
-  color: green;
-}
-
-.button.info {
-  color: steelblue;
+  box-shadow: inset var(--elevation-xs) var(--elevation-xs) var(--elevation-s) #bebebe,
+    inset var(--depression-xs) var(--depression-xs) var(---elevation-s) #ffffff;
 }
