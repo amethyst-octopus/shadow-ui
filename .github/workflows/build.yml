@@ -1,6 +1,6 @@
 name: Build Package
 
-# Run this workflow whenever there's a PR that is opened, synchronized, and repored
+# Run this workflow whenever there's a PR that is opened, synchronized, and reopened
 on: pull_request
 
 jobs:
