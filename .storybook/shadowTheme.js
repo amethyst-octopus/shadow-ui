@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming/create';
-import logo from '../src/assets/logo.png'
+import logo from '../src/assets/logo.webp'
 
 
 export default create({
