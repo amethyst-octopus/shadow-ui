@@ -4,11 +4,12 @@
   "description": "A neumorphic component design system",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "start": "npm i && npm i -D @storybook/cli && npm run build-storybook && npx http-server ./storybook-static",
+    "start": "npm i && npm i -D @storybook/cli && i -D husky && npm run build-storybook && npx http-server ./storybook-static",
     "dev": "npm run storybook"
   },
   "author": "",
