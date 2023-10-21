@@ -1,0 +1,23 @@
+name: Build Package
+
+# Run this workflow whenever there's a PR that is opened, synchronized, and reopened
+on: 
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  # Label for build job
+  build-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Install package dependencies
+        run: npm ci
+
+      - name: Build storybook
+        run: npm run build-storybook
+
+      - name: Build library
+        run: npm run build
