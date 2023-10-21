@@ -1,7 +1,9 @@
 name: Build Package
 
 # Run this workflow whenever there's a PR that is opened, synchronized, and reopened
-on: pull_request
+on: 
+  pull_request:
+    types: [opened, reopened, synchronize]
 
 jobs:
   # Label for build job
