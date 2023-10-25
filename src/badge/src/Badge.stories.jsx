@@ -1,8 +1,8 @@
-import { T1Button } from "./T1Badge";
+import { T1Badge } from "./T1Badge";
 
 export default {
-	title: "Components/T1Badge",
-	component: T1Button,
+	title: "Components/Badges",
+	component: T1Badge,
 };
 
 export const Type_One = {

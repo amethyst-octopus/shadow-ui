@@ -1,26 +1,8 @@
-import { useState } from "react";
-import "./Badge.css";
-
-export const T1Badge = ({ text, onPress, style, additionalDirectives }) => {
-	const [isFocused, setFocus] = useState(false);
-
-	const handleClick = () => {
-		setFocus(true);
-		if (onPress) onPress();
-	};
-
+export default function T1Badge({ children, badgeContent }) {
 	return (
-		<button
-			onMouseLeave={() => setFocus(false)}
-			onFocus={() => setFocus(true)}
-			onBlur={() => setFocus(false)}
-			onClick={handleClick}
-			tabIndex={0}
-			className={isFocused ? "button button-focus" : "button"}
-			style={style}
-			{...additionalDirectives}
-		>
-			{text}
-		</button>
+		<div className="badge-container">
+			{children}
+			<span className="badge">{badgeContent}</span>
+		</div>
 	);
-};
+}
