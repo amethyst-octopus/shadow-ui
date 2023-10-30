@@ -1,0 +1,11 @@
+@import url("../../global/styles.css");
+
+.alert {
+	background-color: var(--background);
+	padding: 1rem 1.5rem;
+	font-size: 0.875rem;
+	display: flex;
+	box-shadow:
+		6px 6px 12px var(--background-shadow),
+		-6px -6px 12px #fff !important;
+}
