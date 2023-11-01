@@ -16,7 +16,7 @@ export const T1Checkbox = ({ id, initialState = false, label }) => {
 					className="checkbox-state"
 					type="checkbox"
 					id={id}
-					onChange={() => onChange()}
+					onChange={onChange}
 					checked={isChecked}
 				/>
 				<span className="custom-checkbox">
