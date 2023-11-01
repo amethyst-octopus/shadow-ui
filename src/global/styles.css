@@ -1,18 +1,22 @@
 :root {
-    --background: #ededed;
-    --background-shadow: #c9c9c9;
-    --elevation-xs: 4px;
-    --elevation-s: 8px;
-    --elevation-m: 12px;
-    --elevation-l: 16px;
-    --elevation-xl: 20px;
-    --depression-xs: -4px;
-    --depression-s: -8px;
-    --depression-m: -12px;
-    --depression-l: 16px;
-    --depression-xl: 20px;
+	--background: #ededed;
+	--background-shadow: #c9c9c9;
+	--elevation-xs: 4px;
+	--elevation-s: 8px;
+	--elevation-m: 12px;
+	--elevation-l: 16px;
+	--elevation-xl: 20px;
+	--depression-xs: -4px;
+	--depression-s: -8px;
+	--depression-m: -12px;
+	--depression-l: 16px;
+	--depression-xl: 20px;
 }
 
 .selectable:hover {
-    cursor: pointer;
+	cursor: pointer;
+}
+
+body {
+	font-family: monospace;
 }
