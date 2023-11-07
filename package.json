@@ -9,7 +9,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "start": "npm i && npx http-server ./storybook-static",
-    "dev": "npm run storybook"
+    "dev": "npm run storybook",
+    "component": "node ./infra/component-generator.js"
   },
   "author": "",
   "license": "ISC",
