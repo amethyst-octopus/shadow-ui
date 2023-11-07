@@ -1,0 +1,31 @@
+@import url("../../global/styles.css");
+
+.badge-container {
+	position: relative;
+	display: inline-block;
+	padding-right: 10px;
+	padding-top: 12px;
+	cursor: pointer;
+}
+
+.badge-container:hover .badge {
+	box-shadow:
+		1px 1px 2px hsl(264, 4%, 77%),
+		-1px -1px 2px #ffffff;
+}
+
+.badge {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	font-family: monospace;
+	padding: 4px 8px;
+	transition: 0.2s box-shadow ease-in-out;
+	border-radius: 10px;
+	background: #efefef;
+	outline: none;
+	box-shadow:
+		3px 3px 6px #b8b9be,
+		-3px -3px 6px #ffffff;
+}
