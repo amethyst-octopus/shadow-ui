@@ -1,8 +1,12 @@
 import { Meta } from "@storybook/blocks";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import ashaun from "./assets/ashaun.webp";
 import paige from './assets/paigegodfrey.webp';
 import alex from './assets/alex.webp';
 import sammy from './assets/sammy.webp';
+
+export const effect = "blur";
 
 export const RightArrow = () => (
   <svg
@@ -22,6 +26,8 @@ export const RightArrow = () => (
   </svg>
 );
 
+
+
 <div className='sb-section-title'>
     # Team
     The Shadow-UI core team met teaching a software development course at Salesforce in San Fransisco.
@@ -29,7 +35,10 @@ export const RightArrow = () => (
 
 <div className="sb-section">
     <div className="sb-section-item">
-      <img src={ashaun} />
+       <LazyLoadImage
+          alt="A'Shaun stands in front of a pyramid of pumpkins, wearing a black hat, trenchcoat, and a hat with a white letter, 'B', on the front."
+          effect={effect}
+          src={ashaun}/>
       <h4 className="sb-section-item-heading">A'Shaun Thomas</h4>
       <h5 className="sc-section-item-subheader">Founder @AmethystOctopus</h5>
       <p className="sb-section-item-paragraph">When not coding, this guy is heavy into caring for plants and teaches web development courses at Codepath.org. He has a banana tree in his living room.</p>
@@ -37,27 +46,34 @@ export const RightArrow = () => (
       <a href="https://www.linkedin.com/in/a-shaun-thomas-1b7a185a/" target="_blank" rel="noopener noreferrer">LinkedIn<RightArrow /></a>
     </div>
     <div className="sb-section-item">
-      <img src={sammy} />
+      <LazyLoadImage
+          alt="Sammy looks away from the camera at a geiser on a semi-cloudy day"
+          effect={effect}
+          src={sammy}/>
       <h4 className="sb-section-item-heading">Sammy Au</h4>
       <p className="sb-section-item-paragraph">A tax accountant turned Software Engineer, when not coding he can found playing with his dog or in line at the newest boba shop.</p>
       <a href="https://github.com/samau3" target="_blank" rel="noopener noreferrer">Github<RightArrow /></a>
       <a href="https://www.linkedin.com/in/sammyau/" target="_blank" rel="noopener noreferrer">LinkedIn<RightArrow /></a>
     </div>
     <div className="sb-section-item">
-      <img src={alex} />
+      <LazyLoadImage
+          alt="Alex smiles at the camera next to his dog against an oceanic background"
+          effect={effect}
+          src={alex}/>
       <h4 className="sb-section-item-heading">Alex Linden</h4>
       <p className="sb-section-item-paragraph">Alex spent 14 years managing restaurants before finding a passion for coding and making the switch to software engineering. When not coding he spends his time hanging out with his dog, Rey, and training for triathlons.</p>
-      <a href="https://github.com/Alex-Linden" target="_blank" rel="noopener noreferrer">Github<RightArrow /></a> <br></br>
+      <a href="https://github.com/Alex-Linden" target="_blank" rel="noopener noreferrer">Github<RightArrow /></a>
       <a href="https://www.linkedin.com/in/alex-linden/" target="_blank" rel="noopener noreferrer">LinkedIn<RightArrow /></a>
     </div>
     <div className="sb-section-item">
-      <div>
-        <img src={paige} />
+        <LazyLoadImage
+          alt="A photo of Paige is shown on a screen holding a phone"
+          effect={effect}
+          src={paige}/>
         <h4 className="sb-section-item-heading">Paige Godfrey</h4>
         <p className="sb-section-item-paragraph">Paige is a non-binary Software Engineer and former Finance Leader. Outside of work, they enjoy weightlifting, reading, exploring the city, and playing fetch with their cat Leo.</p>
         <a href="https://github.com/paigegodfrey" target="_blank" rel="noopener noreferrer">Github<RightArrow /></a>
         <a href="https://www.linkedin.com/in/paigegodfrey/" target="_blank" rel="noopener noreferrer">LinkedIn<RightArrow /></a>
-      </div>
     </div>
   </div>
   <style>
@@ -77,8 +93,17 @@ export const RightArrow = () => (
     object-fit: cover;
   }
 
+  .placeholder {
+    background: black;
+    min-height: 352.5px;
+  }
+
   .sb-section-title {
     margin-bottom: 32px;
+  }
+
+  .placeholder {
+
   }
 
   .sb-section a:not(h1 a, h2 a, h3 a) {
