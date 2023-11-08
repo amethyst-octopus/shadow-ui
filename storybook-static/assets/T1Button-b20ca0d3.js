@@ -1,0 +1,2 @@
+import{j as a}from"./jsx-runtime-29545a09.js";import{r as c}from"./index-76fb7be0.js";const r=({text:e,onPress:o,style:s,additionalDirectives:n})=>{const[u,t]=c.useState(!1);return a("button",{onMouseLeave:()=>t(!1),onFocus:()=>t(!0),onBlur:()=>t(!1),onClick:()=>{t(!0),o&&o()},tabIndex:0,className:u?"button button-focus":"button",style:s,...n,children:e})};r.__docgenInfo={description:"",methods:[],displayName:"T1Button"};export{r as T};
+//# sourceMappingURL=T1Button-b20ca0d3.js.map

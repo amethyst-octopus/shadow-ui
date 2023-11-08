@@ -9,7 +9,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "start": "npm i && npx http-server ./storybook-static",
-    "dev": "npm run storybook"
+    "dev": "npm run storybook",
+    "component": "node ./infra/component-generator.js"
   },
   "author": "",
   "license": "ISC",
@@ -56,6 +57,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/react-fontawesome": "^0.2.0"
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "react-lazy-load-image-component": "^1.6.0"
   }
 }
