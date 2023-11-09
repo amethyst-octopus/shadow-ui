@@ -1,11 +1,11 @@
-import { Slider } from "./Slider"
+import { Slider } from "./Slider";
 
 export default {
-    title: 'Components/Slider',
-    component: Slider
-}
+	title: "Components/Slider",
+	component: Slider
+};
 
 export const Type_One = {
-    argTypes: {},
-    args: {}
-}
+	argTypes: {},
+	args: {}
+};
