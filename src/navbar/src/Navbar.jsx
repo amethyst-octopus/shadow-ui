@@ -1,22 +1,26 @@
 import { useState } from "react";
 import "./Navbar.css";
 
-export const Navbar = ({ brand, items }) => {
+export const NavItem = ({item}) => {
+	return (
+		<li className="nav-item">
+			<a className="nav-link" href="#" key={item}>{item}</a>
+		</li>
+	);
+};
 
+export const Navbar = ({ brand, children }) => {
 	return (
 		<nav className="nav-navbar">
 			<span className="nav-brand">
 				<a className="nav-link" href="/">{brand}</a>
 			</span>
 			<span className="nav-item-container">
-				<ul className="nav-items">
-					{items?.map(item =>
-						<li className="nav-item">
-							<a className="nav-link" href="#" key={item}>{item}</a>
-						</li>
-					)}
+				<ul>
+					{children}
 				</ul>
 			</span>
 		</nav>
 	);
 };
+

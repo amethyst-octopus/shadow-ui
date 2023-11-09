@@ -1,4 +1,4 @@
-import { Navbar } from "./Navbar"
+import { NavItem, Navbar } from "./Navbar";
 
 export default {
 	title: "Components/Navbar",
@@ -7,8 +7,10 @@ export default {
 
 export const Type_One = {
 	argTypes: {},
-	args: { 
-		brand: "sample brand",
-		items: ["item1", "item2"]
-	}
+	render: () => (
+		<Navbar brand={"Brand"}>
+			<NavItem item={"item1"} />
+			<NavItem item={"item2"} />
+		</Navbar>
+	),
 };
