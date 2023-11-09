@@ -1,6 +1,5 @@
 .nav-navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   box-shadow: 3px 3px 6px #b8b9be,
     -3px -3px 6px #ffffff;
@@ -13,9 +12,10 @@
   color: black;
 }
 
-
-.nav-items {
-  list-style-type: none;
+.nav-brand {
+  justify-content: start;
+  height: 50px;
+  width: 50px;
 }
 
 .nav-item {

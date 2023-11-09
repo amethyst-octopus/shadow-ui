@@ -8,9 +8,10 @@ export default {
 export const Type_One = {
 	argTypes: {},
 	render: () => (
-		<Navbar brand={"Brand"}>
-			<NavItem item={"item1"} />
-			<NavItem item={"item2"} />
+		<Navbar>
+			<NavItem item={"Logo Brand"} logo={"https://blog.hubspot.com/hubfs/image8-2.jpg"} />
+			<NavItem item={"Item1"} />
+			<NavItem item={"Item2"} />
 		</Navbar>
-	),
+	)
 };
