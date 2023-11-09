@@ -1,0 +1,24 @@
+.nav-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 3px 3px 6px #b8b9be,
+    -3px -3px 6px #ffffff;
+  background: #efefef;
+  padding: 5px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+
+.nav-items {
+  list-style-type: none;
+}
+
+.nav-item {
+  display: inline;
+  padding: 5px;
+}
