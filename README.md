@@ -1,5 +1,6 @@
 # shadow-ui
 A neumorphic component design system
+To learn more visit [Shadow-Ui](https://www.shadow-ui.com/)
 
 ## Local Development Workflow
 
