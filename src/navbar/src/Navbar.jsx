@@ -1,16 +1,15 @@
-import { useState } from "react";
 import "./Navbar.css";
 
-export const NavItem = ({ item, logo=undefined, logoStyle=undefined }) => {
+export const NavItem = ({ label, url, logo = undefined, logoStyle = undefined }) => {
 	return (
-		<>
-			{logo ? 
-				<img src={logo} className="nav-brand" style={logoStyle} alt={item}></img>
-				: <li className="nav-item">
-					<a className="nav-link" href="#" key={item}>{item}</a>
-				</li>
-			}
-		</>
+		<span className={logo ? "nav-brand" : "nav-item"}>
+			<a className="nav-link" href={url}>
+				{logo ?
+					<img src={logo} className="nav-brand-logo" style={logoStyle} alt={`${label}-logo`}></img>
+					: label
+				}
+			</a>
+		</span>
 	);
 };
 
@@ -18,9 +17,8 @@ export const Navbar = ({ children }) => {
 	return (
 		<nav className="nav-navbar">
 			<div className="nav-item-container">
-				{children}	
+				{children}
 			</div>
 		</nav>
 	);
 };
-

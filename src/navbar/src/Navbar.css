@@ -1,4 +1,4 @@
-.nav-navbar {
+.nav-item-container {
   display: flex;
   align-items: center;
   box-shadow: 3px 3px 6px #b8b9be,
@@ -12,13 +12,16 @@
   color: black;
 }
 
-.nav-brand {
-  justify-content: start;
+.nav-brand, .nav-item {
+  display: inline-block;
+}
+
+.nav-brand-logo {
   height: 50px;
-  width: 50px;
+  width: auto;
 }
 
 .nav-item {
   display: inline;
-  padding: 5px;
+  padding: 10px;
 }
