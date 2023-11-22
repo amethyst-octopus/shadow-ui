@@ -19,7 +19,7 @@ export const Slider = ({ defaultValue=50, onClick, minValue=0, maxValue=100, onD
         window.addEventListener('mousemove', function(event) {
             var x = event.clientX;
             var y = event.clientY;
-            console.log('The mouse is at X: ' + x + ' and Y: ' + y);
+            // console.log('The mouse is at X: ' + x + ' and Y: ' + y);
           });
     }, [])
 
@@ -39,9 +39,9 @@ export const Slider = ({ defaultValue=50, onClick, minValue=0, maxValue=100, onD
     const handleChange = (e) =>{
         if(onChange) onChange(e)
         setValue(parseInt(e.target.value))
-        // console.log('trackwidth: ' + trackWidth);
-        console.log(e.ClientX)
-        setTrackWidth(value + 12)
+        console.log('trackwidth: ' + trackWidth);
+        // console.log(e.ClientX)
+        setTrackWidth(value + 16)
         // console.log('value:' + value);
     }
 
