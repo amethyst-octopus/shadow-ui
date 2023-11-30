@@ -3,11 +3,9 @@ import "./Slider.css";
 import { v4 as uuidv4 } from 'uuid';
 
 export const Slider = ({ defaultValue = 50, minValue = 0, maxValue = 100, step }) => {
-    const [value, setValue] = useState(defaultValue);
-    const [trackWidth, setTrackWidth] = useState(10);
-    const [startXTrack, setStartXTrack] = useState();
-    const [sliderRange, setSliderRange] = useState(value);
-    const [inputValue, setInputValue] = useState(value);
+    // const [value, setValue] = useState(defaultValue);
+    const [sliderRange, setSliderRange] = useState(defaultValue);
+    const [inputValue, setInputValue] = useState(defaultValue);
     const sliderRef = useRef(null);
 
     function handleSliderInput() {
@@ -16,7 +14,13 @@ export const Slider = ({ defaultValue = 50, minValue = 0, maxValue = 100, step }
         //Get distance between value and min value
         const distance = sliderRef.current.value - minValue;
 
-        const percentage = (distance / range) * 100;
+        let percentage = (distance / range) * 100;
+        //Conditional to handle thumb overflowing from track border
+        if(percentage < 3.5){
+            percentage = 3.5
+        } else if(percentage > 98){
+            percentage = 98
+        }
         setSliderRange(percentage);
         setInputValue(sliderRef.current.value);
     }
@@ -36,17 +40,17 @@ export const Slider = ({ defaultValue = 50, minValue = 0, maxValue = 100, step }
                     type="range"
                     min={minValue}
                     max={maxValue}
-                    value={value}
+                    value={inputValue}
                     onInput={handleSliderInput}
                     ref={sliderRef}
                     step={step} />
                 <div
                     className="slider-thumb"
-                    style={{ left: `calc(${sliderRange}% - 0.5em)` }}
+                    style={{ left: `calc(${sliderRange}% - 0.75em)` }}
                 ></div>
                 <div
                     className="sui-slider-track-progress"
-                    style={{ width: `${sliderRange}%` }}
+                    style={{ width: `calc(${sliderRange}% - 0.5em)` }}
                 ></div >
             </div>
 

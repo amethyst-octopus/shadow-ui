@@ -22,12 +22,17 @@ input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    height: 0.5em;
+    height: 1em;
     outline: none;
     background-color: var(--back-color);
     border-radius: 10px;
     border: 4px solid #f3f4f7;
-    box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), inset 0px 0px 4px rgba(255, 255, 255, 0), inset 7px 7px 15px rgba(55, 84, 170, .15), inset -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, .2) !important;
+    box-shadow: 7px 7px 15px rgba(55, 84, 170, .15),
+     -7px -7px 20px rgba(255, 255, 255, 1),
+     inset 0px 0px 4px rgba(255, 255, 255, 0),
+     inset 7px 7px 15px rgba(55, 84, 170, .15),
+     inset -7px -7px 20px rgba(255, 255, 255, 1),
+     0px 0px 4px rgba(255, 255, 255, .2) !important;
     position: relative;
     cursor: pointer;
 }
@@ -55,7 +60,7 @@ input[type="range"] {
 
 .sui-slider-track-progress {
     width: 0;
-    height: 0.4em;
+    height: 0.8em;
     border-radius: 10px;
     background: #185BF1;
     /* background: linear-gradient(90deg,
