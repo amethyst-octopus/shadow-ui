@@ -1,5 +1,11 @@
 import { Meta } from "@storybook/blocks";
 
+export const getRandomComponentPath = () => {
+  let components = ['alert', 'badges', 'buttons', 'cards', 'checkbox', 'chips', 'radio-buttons', 'switches'];
+  let randomIndex = Math.floor(Math.random() * 8);
+  return `https://www.shadow-ui.com/?path=/story/components-${components[randomIndex]}--type-one`
+}
+
 export const RightArrow = () => (
   <svg
     viewBox="0 0 14 14"
@@ -40,7 +46,7 @@ export const RightArrow = () => (
       <h4 className="sb-section-item-heading">Easy to configure</h4>
       <p className="sb-section-item-paragraph">Our documentation has built-in code snippet generation which allows you to copy/paste components straight from our site into your IDE</p>
       <a
-            href="https://github.com/amethyst-octopus/shadow-ui"
+            href={getRandomComponentPath()}
             target="_blank"
         >Check out a component<RightArrow /></a>
     </div>
