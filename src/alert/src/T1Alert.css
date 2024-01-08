@@ -1,7 +1,7 @@
 @import url("../../global/styles.css");
 
 .alert {
-	background-color: var(--background);
+	background: #ecf0f3;
 	padding: 1rem 1.5rem;
 	font-size: 0.875rem;
 	display: flex;
