@@ -1,0 +1,21 @@
+.textField-container {
+  font-family: monospace;
+}
+
+.textField-label {
+  display: block;
+  padding: 5px;
+}
+
+.textField {
+  font-family: inherit;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow:
+    2px 1px 6px hsl(0, 0%, 65%),
+    -3px -3px 6px #ffffff,
+    inset 1px 1px 1px hsl(0, 0%, 60%),
+    inset -4px -4px 8px #ffffff;
+}
