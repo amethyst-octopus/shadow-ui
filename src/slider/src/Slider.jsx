@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Slider.css";
 import { v4 as uuidv4 } from 'uuid';
 
-export const Slider = ({ defaultValue = 50, minValue = 0, maxValue = 100, step }) => {
+export const Slider = ({ defaultValue = 50, minValue = 0, maxValue = 100, step, handleChange }) => {
     // const [value, setValue] = useState(defaultValue);
     const [sliderRange, setSliderRange] = useState(defaultValue);
     const [inputValue, setInputValue] = useState(defaultValue);
@@ -23,6 +23,9 @@ export const Slider = ({ defaultValue = 50, minValue = 0, maxValue = 100, step }
         }
         setSliderRange(percentage);
         setInputValue(sliderRef.current.value);
+        if(handleChange){
+            handleChange(sliderRef.current.value)
+        }
     }
 
     useEffect(() => {
