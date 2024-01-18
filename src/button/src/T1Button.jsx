@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Button.css";
 
-export const T1Button = ({ text, onPress, style, additionalDirectives }) => {
+export const T1Button = ({ label, onPress, style, additionalDirectives }) => {
 	const [isFocused, setFocus] = useState(false);
 
 	const handleClick = () => {
@@ -20,7 +20,7 @@ export const T1Button = ({ text, onPress, style, additionalDirectives }) => {
 			style={style}
 			{...additionalDirectives}
 		>
-			{text}
+			{label}
 		</button>
 	);
 };
