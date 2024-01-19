@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Nunito";
+	src: url(../src/assets/fonts/Nunito-Regular.ttf);
+}
+
 :root {
 	--background: #ededed;
 	--background-shadow: #c9c9c9;

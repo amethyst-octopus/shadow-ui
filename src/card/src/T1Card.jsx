@@ -1,24 +1,10 @@
 import "./T1Card.css";
 
-export const T1Card = ({ children }) => {
-	// const [backgroundColor] = useState(bgColor);
-	// const [shadows, setShadows] = useState({});
-
-	// if (!bgColor) {
-	// 	 bgColor = startingHexColor(CardRef);
-	// }
-
-	// useEffect(() => {
-	// 	setShadows(colorToShadows(backgroundColor));
-	// }, [backgroundColor]);
-
-	let style = {
-		boxShadow: `4px 4px 8px #c9c9c9,
-                 -4px -4px 8px #ededed`,
-	};
+export const T1Card = ({ width = "300px", height = "450px", children }) => {
+	console.log("T1Card: children: ", children);
 
 	return (
-		<div className="card" style={style}>
+		<div style={{ width, height }} className="card">
 			{children}
 		</div>
 	);

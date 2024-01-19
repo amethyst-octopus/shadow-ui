@@ -1,13 +1,21 @@
 @import url("../../global/styles.css");
 
 .card {
-	margin: 2rem;
-	display: flex;
-	overflow: hidden;
-	flex-direction: column;
-	border-radius: 50px;
-	background: var(--background);
-	padding: 40px;
-	height: 150px;
-	width: 300px;
+	border-radius: 1em;
+	background-color: #eaeaea;
+	outline: none;
+	transition: all 100ms ease;
+	box-shadow:
+		0.3rem 0.3rem 0.6rem #c8d0e7,
+		-0.2rem -0.2rem 0.5rem #ffffff;
+	font-family: "Nunito", sans-serif;
+	color: #31344b;
+}
+
+.card-splash {
+	border-top-right-radius: 1em;
+	border-top-left-radius: 1em;
+}
+
+.bg-card {
 }

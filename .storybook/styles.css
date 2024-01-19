@@ -3,6 +3,11 @@
     src: url(../src/assets/fonts/MajorMonoDisplay-Regular.ttf)
 }
 
+@font-face {
+    font-family: "Nunito";
+    src: url(../src/assets/fonts/Nunito-Regular.ttf);
+}
+
 .logo {
     font-family: 'Logo', monospace;
     font-size: 20px;
@@ -10,3 +15,4 @@
     width: 220px;
     padding: 5px 15px;
 }
+
