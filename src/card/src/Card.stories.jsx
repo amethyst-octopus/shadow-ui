@@ -6,13 +6,23 @@ import BayBridge from "../../assets/baybridge.jpg";
 
 export default {
 	component: T1Card,
-	title: "Components/Cards",
+	title: "Components/Card",
+	tags: ["autodocs"],
+	parameters: {
+		docs: {
+			source: { language: "jsx" },
+			description: {
+				component:
+					"Cards are used to group content and actions pertaining to a single subject. They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.",
+			},
+		},
+	},
 };
 
-export const Type_One = {
-	args: {
-		children: (
-			<>
+export const Playground = {
+	render: () => {
+		return (
+			<T1Card>
 				<T1CardSplash src={BayBridge} alt="bay bridge" />
 				<T1Chip
 					label="Daily Topic"
@@ -44,7 +54,7 @@ export const Type_One = {
 					Some quick example text to build on the card title and make up the
 					bulk of the card's content.
 				</p>
-			</>
-		),
+			</T1Card>
+		);
 	},
 };

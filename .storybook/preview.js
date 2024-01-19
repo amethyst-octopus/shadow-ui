@@ -2,7 +2,8 @@
 import { themes } from '@storybook/theming';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-
+import prettier from 'prettier/standalone';
+import prettierBabel from 'prettier/parser-babel';
 library.add(fas);
 
 const preview = {
@@ -23,7 +24,11 @@ const preview = {
     },
     parameters: {
       docs: {
-        theme: themes.dark,
+        transformSource: input =>
+          prettier.format(input, {
+            parser: 'babel',
+            plugins: [prettierBabel],
+          }),
       },
     },
     controls: {
@@ -36,6 +41,3 @@ const preview = {
 };
 
 export default preview;
-
-// Create express server listening on port 3000 and connects to shopify storefront API
-
