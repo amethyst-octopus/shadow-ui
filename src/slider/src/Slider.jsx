@@ -15,15 +15,16 @@ export const Slider = ({ defaultValue = 50, minValue = 0, maxValue = 100, step, 
 
         let percentage = (distance / range) * 100;
         // Conditional to handle thumb overflowing from track border
-        if(percentage < 3.5){
-            percentage = 3.5
-        } else if(percentage > 98){
-            percentage = 98
+        if (percentage < 2.9) {
+            percentage = 2.9;
+        } else if (percentage > 99.4) {
+            percentage = 99.4;
         }
         setSliderRange(percentage);
         setInputValue(sliderRef.current.value);
-        if(handleChange){
-            handleChange(sliderRef.current.value)
+        console.log(sliderRange)
+        if (handleChange) {
+            handleChange(sliderRef.current.value);
         }
     }
 
@@ -49,10 +50,12 @@ export const Slider = ({ defaultValue = 50, minValue = 0, maxValue = 100, step, 
                     className="slider-thumb"
                     style={{ left: `calc(${sliderRange}% - 0.75em)` }}
                 ></div>
-                <div
-                    className="sui-slider-track-progress"
-                    style={{ width: `calc(${sliderRange}% - 0.5em)` }}
-                ></div >
+                {sliderRange > 2.9 ?
+                    <div
+                        className="sui-slider-track-progress"
+                        style={{ width: `calc(${sliderRange}% - 0.5em)` }}
+                    ></div >
+                    : null}
             </div>
 
         </>

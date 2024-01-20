@@ -20,13 +20,14 @@ input[type="range"] {
 
 .sui-slider-input {
     -webkit-appearance: none;
+    isolation: isolate;
+    overflow: hidden;
     appearance: none;
-    width: 100%;
+    width: 90vw;
     height: 1em;
     outline: none;
     background-color: var(--back-color);
     border-radius: 15px;
-    /* border: 4px solid #f3f4f7; */
     box-shadow:     -8px -4px 8px 0px #ffffff,
     8px 4px 12px 0px #d1d9e6,
     4px 4px 4px 0px #d1d9e6 inset,
@@ -58,8 +59,8 @@ input[type="range"] {
 
 .sui-slider-track-progress {
     width: 0;
-    height: 0.9em;
-    border-radius: 10px;
+    height: 0.85em;
+    border-radius: 115px;
     background: #185BF1;
     /* background: linear-gradient(90deg,
     #55e0ff,
@@ -67,7 +68,7 @@ input[type="range"] {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 3px;
+    left: 2.9px;
     pointer-events: none;
     transition-property: box-shadow;
     transition-duration: 0.2s;
@@ -76,13 +77,13 @@ input[type="range"] {
 .slider-thumb {
     position: absolute;
     width: 1em;
-    height:0.85em;
+    height: 78%;
     background: #ecf0f3;
-    border-radius: 50%;
+    border-radius: 15px;
     position: absolute;
     top: 50%;
-    left: -0.25em;
-    transform: translateY(-50%);
+    left: -.25em;
+    transform: translateY(-48%);
     z-index: 2;
     pointer-events: none;
     transition: transform 0.1s linear;
