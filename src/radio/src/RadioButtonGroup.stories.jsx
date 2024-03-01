@@ -1,11 +1,24 @@
 import { T1RadioButtonGroup } from "./RadioButtonGroup";
 
 export default {
-	title: "Components/Radio Buttons",
+	title: "Components/Radio Button",
 	component: T1RadioButtonGroup,
+	tags: ["autodocs"],
+	table: {
+		defaultValue: { summary: "N/A" },
+	},
+	parameters: {
+		docs: {
+			source: { language: "jsx" },
+			description: {
+				component:
+					"Radio Buttons are used to select a single option from a list of options.",
+			},
+		},
+	},
 };
 
-export const Type_One = {
+export const Playground = {
 	args: {
 		options: [
 			{ id: "opt1", label: "Option 1", value: "opt1" },
